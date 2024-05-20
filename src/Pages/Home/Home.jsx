@@ -4,6 +4,7 @@ import Bistrobg from "./BistroBg/Bistrobg";
 import Call from "./Call";
 import Featured from "./Featured/Featured";
 import PopularMenu from "./PopulerMenu/PoupularMenu";
+import Testimonials from "./Testimonial/Testimonials";
 
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
             <PopularMenu></PopularMenu>
             <Call></Call>
             <Featured></Featured>
+            <Testimonials></Testimonials>
         </div>
     );
 };
