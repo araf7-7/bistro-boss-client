@@ -2,19 +2,27 @@
 import { useState } from 'react';
 import { useRef } from 'react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 const Header = () => {
     const navOptions = <>
+        <Link to='/'>
+            <li className="group flex  cursor-pointer flex-col">
+                Home<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+            </li>
+        </Link>
         <li className="group flex  cursor-pointer flex-col">
-            Home<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+            Contact Us<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
         </li>
         <li className="group flex  cursor-pointer flex-col">
-            Services<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+            Dashboard<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
         </li>
+        <Link to='/menu'>
+            <li className="group flex  cursor-pointer flex-col">
+                Our Menu<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+            </li>
+        </Link>
         <li className="group flex  cursor-pointer flex-col">
-            About<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
-        </li>
-        <li className="group flex  cursor-pointer flex-col">
-            Contact<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+            Our Shop<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
         </li>
     </>
     const [dropDownState, setDropDownState] = useState(false);
@@ -46,7 +54,7 @@ const Header = () => {
                 <div ref={dropDownMenuRef} onClick={() => setDropDownState(!dropDownState)} className="relative flex transition-transform md:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="cursor-pointer" > <line x1="4" x2="20" y1="12" y2="12" /> <line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /> </svg>
                     {dropDownState && (
-                        <ul className=" z-10  gap-2  bg-white  absolute right-0 top-11 flex w-[200px] flex-col  rounded-lg   text-base ">
+                        <ul className=" z-10  gap-2  bg-white text-black absolute right-0 top-11 flex w-[200px] flex-col  rounded-lg   text-base ">
                             {navOptions}
                         </ul>
                     )}

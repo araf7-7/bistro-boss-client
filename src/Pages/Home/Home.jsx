@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Banner from "../../Banners/Banner";
 import Swipper from "../../Banners/Swipper";
 import Bistrobg from "./BistroBg/Bistrobg";
@@ -10,6 +11,10 @@ import Testimonials from "./Testimonial/Testimonials";
 
 const Home = () => {
     return (
+        <>
+        <Helmet>
+            <title>Home</title>
+            </Helmet> 
         <div>
             <Banner></Banner>
             <div className="mx-auto md:w-4/12">
@@ -27,7 +32,7 @@ const Home = () => {
             <Featured></Featured>
             <Testimonials></Testimonials>
             <Card></Card>
-        </div>
+        </div></>
     );
 };
 
