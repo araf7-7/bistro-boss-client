@@ -2,6 +2,7 @@ import Banner from "../../Banners/Banner";
 import Swipper from "../../Banners/Swipper";
 import Bistrobg from "./BistroBg/Bistrobg";
 import Call from "./Call";
+import Card from "./Card/Card";
 import Featured from "./Featured/Featured";
 import PopularMenu from "./PopulerMenu/PoupularMenu";
 import Testimonials from "./Testimonial/Testimonials";
@@ -25,6 +26,7 @@ const Home = () => {
             <Call></Call>
             <Featured></Featured>
             <Testimonials></Testimonials>
+            <Card></Card>
         </div>
     );
 };
