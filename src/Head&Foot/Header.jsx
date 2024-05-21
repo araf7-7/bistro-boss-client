@@ -21,9 +21,11 @@ const Header = () => {
                 Our Menu<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
         </Link>
-        <li className="group flex  cursor-pointer flex-col">
-            Our Shop<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
-        </li>
+        <Link to='/order/salad'>
+            <li className="group flex  cursor-pointer flex-col">
+                Order Food<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+            </li>
+        </Link>
     </>
     const [dropDownState, setDropDownState] = useState(false);
     const dropDownMenuRef = useRef();

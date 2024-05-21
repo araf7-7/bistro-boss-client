@@ -1,12 +1,14 @@
 
 
 const Cards = ({card}) => {
-    const {name, image, recipe} = card;
+    const {name, image, recipe,price} = card;
 
     return (
         <div>
-            <div className=" w-96 h-[500px] bg-[#E8E8E8] ">
+            <div className="  w-96 h-[500px] bg-[#E8E8E8] ">
+            <p className= "absolute  ml-[320px] my-5 p-2 rounded-lg bg-[#111827] text-white">${price}</p>
                 <img src={image} className="w-full" alt="Food" />
+               
                 <div className="card-body">
                     <h2 className="text-2xl font-medium  text-center">{name}</h2>
                     <p className="text-lg font-normal">{recipe}</p>
