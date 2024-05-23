@@ -24,13 +24,13 @@ const Swipper = () => {
             <SwiperSlide><img src="https://i.ibb.co/DMWvhH5/slide4.jpg" alt="" />
             <h1 className='uppercase text-4xl font-cinzel  text-white -mt-12 text-center'>Pastries</h1>
             </SwiperSlide>
-            <SwiperSlide><img className='h-[405px]' src="https://i.ibb.co/zZx2cSV/Low-carb-vanilla-panna-cotta-with-strawberry-rhubarb-sauce-h.jpg" alt="" />
+            <SwiperSlide><img className='lg:h-[405px]' src="https://i.ibb.co/zZx2cSV/Low-carb-vanilla-panna-cotta-with-strawberry-rhubarb-sauce-h.jpg" alt="" />
             <h1 className='uppercase text-4xl font-cinzel  text-white -mt-12 text-center'>Cakes</h1>
             </SwiperSlide>
-            <SwiperSlide><img className='h-[405px]' src="https://i.ibb.co/Rbvgm4f/DD-213.jpg" alt="" />
+            <SwiperSlide><img className='lg:h-[405px]' src="https://i.ibb.co/Rbvgm4f/DD-213.jpg" alt="" />
             <h1 className='uppercase text-4xl font-cinzel  text-white -mt-12 text-center'>Pizzas</h1>
             </SwiperSlide>
-            <SwiperSlide><img className='h-[405px]' src="https://i.ibb.co/9hByhWF/DD-128.jpg" alt="" />
+            <SwiperSlide><img className='lg:h-[405px]' src="https://i.ibb.co/9hByhWF/DD-128.jpg" alt="" />
             <h1 className='uppercase text-4xl font-cinzel   text-white -mt-12 text-center'>Pastas</h1>
             </SwiperSlide>
 

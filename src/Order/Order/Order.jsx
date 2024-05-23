@@ -8,6 +8,7 @@ import useMenu from '../../Hooks/useMenu';
 
 import OrderTab from '../OrderTab/OrderTab';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 const Order = () => {
     const categories = ['salad', 'pizza', 'soup','dessert','drinks']
     const {category} = useParams()
@@ -21,6 +22,9 @@ const Order = () => {
     const drink = menu.filter(item => item.category === 'drinks')
      return (
         <div>
+            <Helmet>
+                <title>Order Food</title>
+            </Helmet>
             <Cover img={orderCover} title='Order Food' des='Place Your Order Here'></Cover>
             <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                 <TabList className="text-[#BB8506] mx-[470px] my-20" >

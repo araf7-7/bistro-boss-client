@@ -26,6 +26,11 @@ const Header = () => {
                 Order Food<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
         </Link>
+        <Link to='/login'>
+            <li className="group flex  cursor-pointer flex-col">
+                Login<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+            </li>
+        </Link>
     </>
     const [dropDownState, setDropDownState] = useState(false);
     const dropDownMenuRef = useRef();
@@ -45,7 +50,7 @@ const Header = () => {
     }, []);
     return (
         <div className=''>
-            <nav className="flex w-full container fixed z-10 bg-opacity-70 items-center justify-between bg-black px-4 py-2 text-white mb-24">
+            <nav className="flex w-full lg:w-full container fixed z-10 bg-opacity-70 items-center justify-between bg-black px-4 py-2 text-white mb-24">
                 <div className="scale-100  font-cinzel cursor-pointer rounded-2xl px-3 py-2 text-xl font-semibold text-white transition-all duration-200 hover:scale-110">
                     <h2>Bistro Boss</h2>
                     <h2>Resturent</h2>
