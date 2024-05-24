@@ -9,7 +9,7 @@ import { Link, useLocation, useNavigate, } from 'react-router-dom';
 import { toast } from 'sonner';
 const Login = () => {
     const { signIn } = useContext(AuthContext)
-    const [disabled, setDisabled] = useState(true)
+    const [setDisabled] = useState(true)
 
     const location = useLocation();
     useEffect(() => {
@@ -21,7 +21,8 @@ const Login = () => {
     //     if (user) navigate("/")
     // }, [navigate, user]
     // )
-    let  from = location?.state?.from?.pathname || "/"
+    const  from = location?.state?.from?.pathname || "/"
+    console.log("state in the location", location.state);
     const handleLogin = event => {
         event.preventDefault()
         const form = event.target
@@ -72,7 +73,7 @@ const Login = () => {
                             <input onBlur={handleValidateCaptcha} type="text" name="captcha" id="captcha" placeholder="Type The Captcha Above" className="w-full mb-3 px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600" />
 
                         </div>
-                        <button disabled={disabled} className="block btn btn-primary w-full p-3 text-center rounded-sm dark:bg-[#D1A054B2] border-none hover:bg-orange-300 dark:text-white ">Sign in</button>
+                        <button disabled={false} className="block btn btn-primary w-full p-3 text-center rounded-sm dark:bg-[#D1A054B2] border-none hover:bg-orange-300 dark:text-white ">Sign in</button>
                     </form>
                     <p className='text-[#D1A054] mt-3'>New Here? <Link to='/signup' className='underline font-bold'>Create A Account Here</Link></p>
                 </div>

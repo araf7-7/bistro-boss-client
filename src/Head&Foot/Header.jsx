@@ -5,14 +5,16 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 import { FaShoppingCart } from 'react-icons/fa';
+import useCart from '../Hooks/useCart';
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
+    const [cart] = useCart()
     const handleLogOut = () => {
         logOut()
             .then(() => { })
             .catch(error => console.log(error));
     }
-    console.log(user);
+    // console.log(user);
     const navOptions = <>
         <Link to='/'>
             <li className="group flex  cursor-pointer flex-col">
@@ -37,16 +39,25 @@ const Header = () => {
         </Link>
         <Link>
             <button className="btn btn-ghost">
-                <FaShoppingCart/>
-                <div className="badge badge-secondary">+0</div>
+                <FaShoppingCart />
+                <div className="badge badge-secondary">+{cart.length}</div>
             </button>
-            </Link>
+        </Link>
 
         {
             user ?
                 <>
-                    <span><img src={user?.photoURL} className='w-10 rounded-full ' alt="" /></span>
-                    <button onClick={handleLogOut} className='btn btn-ghost'>Log Out </button>
+                    <span>
+
+                        <div className="dropdown dropdown-hover">
+                            <img src={user?.photoURL} className='w-10 rounded-full ' alt="" />
+                            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow text-black bg-base-100 rounded-box w-52">
+                                <li className='ml-2 text-lg font-cinzel font-medium'>{user?.displayName}</li>
+                                <li><a>Update Profile</a></li>
+                            </ul>
+                        </div>
+                    </span>
+                    <button onClick={handleLogOut} className='btn bg-[#D1A054] border-0'>Log Out </button>
                 </> :
                 <>
                     <Link to='/login'>
