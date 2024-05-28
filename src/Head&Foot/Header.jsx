@@ -37,7 +37,7 @@ const Header = () => {
                 Order Food<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
         </Link>
-        <Link>
+        <Link to='/dashboard/cart'>
             <button className="btn btn-ghost">
                 <FaShoppingCart />
                 <div className="badge badge-secondary">+{cart.length}</div>

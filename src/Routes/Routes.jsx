@@ -10,6 +10,11 @@ import Order from "../Order/Order/Order";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Dashboard from "../Dashboard/Dashboard";
+import Cart from "../Dashboard/Cart/Cart";
+import AllUsers from "../Dashboard/AllUser/AllUsers";
+
+
 
 export const router = createBrowserRouter([
     {
@@ -37,8 +42,23 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/signup',
-                element:<SignUp></SignUp>
+                element: <SignUp></SignUp>
 
+            }
+        ]
+    },
+    {
+        path: 'dashboard',
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        children: [
+            {
+                path: 'Cart',
+                element: <Cart></Cart>
+            },
+            // admin paths
+            {
+                path: 'users',
+                element : <AllUsers></AllUsers>
             }
         ]
     }

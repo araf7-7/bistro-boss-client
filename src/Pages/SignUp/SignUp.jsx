@@ -7,11 +7,15 @@ import { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 import { toast } from 'sonner';
+import SocialLogin from '../../SocialLogin/SocialLogin';
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
+
 
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm()
     const { createUser, updateUserProfile } = useContext(AuthContext)
     const navigate = useNavigate()
+    const axiosPublic = useAxiosPublic()
     const onSubmit = data => {
         console.log(data)
         createUser(data.email, data.password)
@@ -20,10 +24,22 @@ const SignUp = () => {
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        console.log('user profile updated');
-                        reset()
-                       toast.success('Profile Has Been Created')
-                       navigate('/')
+                        const userInfo = {
+                            name: data.name,
+                            email: data.email
+
+                        }
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    console.log('user added to the database');
+                                    // console.log('user profile updated');
+                                    reset()
+                                    toast.success('Profile Has Been Created')
+                                    navigate('/');
+                                }
+                            })
+
                     })
                     .catch(error => console.log(error))
             })
@@ -60,9 +76,9 @@ const SignUp = () => {
                             {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase one lower case, one number and one special character.</p>}
                         </div>
                         <input type="submit" value='Sign Up' className='block btn btn-primary w-full p-3 text-center rounded-sm dark:bg-[#D1A054B2] border-none hover:bg-orange-300 dark:text-white ' />
-
-                        <p className='text-[#D1A054] mt-3'>Already registered?<Link to='/login' className='underline font-bold'>Go to log in</Link></p>
                     </form>
+                    <SocialLogin></SocialLogin>
+                    <p className='text-[#D1A054] mt-3'>Already registered?<Link to='/login' className='underline font-bold'>Go to log in</Link></p>
                 </div>
                 <div className='flex-1'>
                     <img src={img2} alt="" />

@@ -7,6 +7,8 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { Link, useLocation, useNavigate, } from 'react-router-dom';
 import { toast } from 'sonner';
+import SocialLogin from '../../SocialLogin/SocialLogin';
+
 const Login = () => {
     const { signIn } = useContext(AuthContext)
     const [setDisabled] = useState(true)
@@ -75,6 +77,7 @@ const Login = () => {
                         </div>
                         <button disabled={false} className="block btn btn-primary w-full p-3 text-center rounded-sm dark:bg-[#D1A054B2] border-none hover:bg-orange-300 dark:text-white ">Sign in</button>
                     </form>
+                    <SocialLogin></SocialLogin>
                     <p className='text-[#D1A054] mt-3'>New Here? <Link to='/signup' className='underline font-bold'>Create A Account Here</Link></p>
                 </div>
             </div>
